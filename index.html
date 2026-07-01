@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nithin Austin Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="sidebar">
+    <div>
+      <div class="sidebar-name">Nithin Austin</div>
+      <div class="sidebar-role">CS Student</div>
+    </div>
+    <ul class="nav-list">
+      <li class="nav-item"><a href="#about" class="active">Home <span class="nav-num">1</span></a></li>
+      <li class="nav-item"><a href="#projects">Projects <span class="nav-num">2</span></a></li>
+      <li class="nav-item"><a href="#stack">Stack <span class="nav-num">3</span></a></li>
+      <li class="nav-item"><a href="#experience">Experience <span class="nav-num">4</span></a></li>
+    </ul>
+    <div class="sidebar-contact">
+      <div>Guelph, ON</div>
+      <div style="margin-top:0.4rem;">Open to Co-op</div>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <div class="section" id="about">
+      <div class="section-heading">About</div>
+      <div style="height:0.6rem"></div>
+      <p class="about-text">Welcome to my site. I'm a Second-year Computer Science student at the University of Guelph, focusing on Artificial Intelligence. I build things — systems programs in C, games in Unity, and web projects. Currently maintaining an 87% average and looking for co-op opportunities.</p>
+    </div>
+
+    <div class="section" id="projects">
+      <div class="section-heading">Projects</div>
+      <div class="section-sub">Things I've built.</div>
+
+      <div class="entry">
+        <div class="entry-title">Telecom Log Analyzer <span class="arr">↗</span></div>
+        <div class="entry-desc">Parsed and analyzed telecom CSV &amp; binary logs in C — structs, dynamic memory, file I/O.</div>
+      </div>
+      <div class="entry hl">
+        <div class="entry-title">Cube Jumper Arcade Game <span class="arr">↗</span></div>
+        <div class="entry-desc">Arcade game in C# with Unity Engine — collision detection, scoring logic, animations.</div>
+      </div>
+      <div class="entry">
+        <div class="entry-title">Portfolio Blog Website <span class="arr">↗</span></div>
+        <div class="entry-desc">Responsive portfolio and blog built from scratch in HTML &amp; CSS.</div>
+      </div>
+      <div class="entry">
+        <div class="entry-title">VEX V5 Competition Robot <span class="arr">↗</span></div>
+        <div class="entry-desc">Programmed competition robots using VEX V5 hardware and sensors.</div>
+      </div>
+      <div class="entry">
+        <div class="entry-title">p5.js Browser Game <span class="arr">↗</span></div>
+        <div class="entry-desc">Top-rated game built with p5.js — recognized by the CS Club.</div>
+      </div>
+      <div class="entry">
+        <div class="entry-title">Digital Storefront <span class="arr">↗</span></div>
+        <div class="entry-desc">E-commerce stores on Shopify and Etsy — product management and operations. 2022–Present.</div>
+      </div>
+    </div>
+
+    <div class="section" id="stack">
+      <div class="section-heading">Stack</div>
+      <div class="section-sub">Languages and tools I work with.</div>
+      <div class="skills-list">
+        <div class="skill-row"><span class="skill-cat">Languages</span><span class="skill-vals">C, Java, Python, C#, C++, HTML, CSS</span></div>
+        <div class="skill-row"><span class="skill-cat">Tools</span><span class="skill-vals">Git, GDB, Make, GCC, GitLab, GitHub, Unity</span></div>
+        <div class="skill-row"><span class="skill-cat">OS</span><span class="skill-vals">Linux, macOS, Windows</span></div>
+        <div class="skill-row"><span class="skill-cat">Other</span><span class="skill-vals">Shopify, Etsy, p5.js, Microsoft Office</span></div>
+      </div>
+    </div>
+
+    <div class="section" id="experience">
+      <div class="section-heading">Experience</div>
+      <div class="section-sub">Volunteering, clubs, and extracurriculars.</div>
+
+      <div class="list-row"><span class="list-title">Google Developer Club — Guelph</span><span class="list-date">2025 – Present</span></div>
+      <div class="list-row"><span class="list-title">CS Club — St. Marcellinus</span><span class="list-date">2021 – 2025</span></div>
+      <div class="list-row"><span class="list-title">School Secretary Volunteer</span><span class="list-date">2021 – 2025</span></div>
+      <div class="list-row"><span class="list-title">Content Creator — YouTube</span><span class="list-date">2017 – Present</span></div>
+
+      <div style="margin-top:2rem; margin-bottom:0.4rem;">
+        <div class="section-heading">Education</div>
+      </div>
+
+      <div class="edu-row">
+        <div class="edu-top">
+          <span class="list-title">BComp Computer Science (Co-op)</span>
+          <span class="list-date">2025 – Present</span>
+        </div>
+        <div class="entry-desc">University of Guelph · AI Emphasis · 87% average</div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-top">
+          <span class="list-title">Ontario Secondary School Diploma</span>
+          <span class="list-date">2021 – 2025</span>
+        </div>
+        <div class="entry-desc">St. Marcellinus Secondary · Honour Roll × 4 years</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+const sections = document.querySelectorAll('.section[id]');
+const links = document.querySelectorAll('.nav-item a');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      links.forEach(l => l.classList.remove('active'));
+      const m = document.querySelector(`.nav-item a[href="#${e.target.id}"]`);
+      if (m) m.classList.add('active');
+    }
+  });
+}, { threshold: 0.4 });
+sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
